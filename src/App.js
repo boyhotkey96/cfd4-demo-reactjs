@@ -19,7 +19,6 @@ import Forwardreftest from './pages/hook/Forwardref-test.js';
 import Loading from './pages/profile/components/Loading';
 // import './assets/css/style.scss';
 
-
 function App() {
     return <BrowserRouter>
         <Header />
