@@ -2,8 +2,12 @@ import React from "react";
 
 import Footer from "../../components/Footer.js";
 import Header from "../../components/Header.js";
+import { useParams, useRouteMatch } from 'react-router-dom'
 
 export default function Detail() {
+    let id  = useRouteMatch();
+    console.log(id)
+
   return (
       <main>
         <div className="banner__course">

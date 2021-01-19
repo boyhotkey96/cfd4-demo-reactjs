@@ -1,7 +1,8 @@
 import {
     BrowserRouter,
     Route,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom'
 import './App.css';
 import Header from './components/Header.js'
@@ -15,25 +16,22 @@ import Demohook from './pages/hook/';
 import State from './pages/hook/State-test.js';
 import Forwardref from './pages/hook/Forwardref.js';
 import Forwardreftest from './pages/hook/Forwardref-test.js';
+import Loading from './pages/profile/components/Loading';
+// import './assets/css/style.scss';
+
 
 function App() {
     return <BrowserRouter>
         <Header />
         <Switch>
-            <Route path="/" exact>
-                <Home />
-            </Route>
-            <Route path="/thong-tin-ca-nhan" exact>
-                <Profile />
-            </Route>
-            <Route path="/chi-tiet" exact>
-                <Detail />
-            </Route>
-            <Route path="/404" exact>
-                <Page404 />
-            </Route>
+            <Route path="/" exact component={Home} />
+            <Route path="/thong-tin-ca-nhan" component={Profile} />
+            <Route path="/chi-tiet/:id" component={Detail} />
+            <Route component={Page404} />
+            {/* <Redirect from='*' to='/404' /> */}
         </Switch>
         <Footer />
+        <Loading />
     </BrowserRouter>
 }
 

@@ -1,0 +1,27 @@
+.pageLoading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  pointer-events: none;
+  > div {
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    border-radius: 50%;
+    transition: all .8s ease-in-out;
+  }
+  &.active {
+    visibility: visible;
+    > div {
+      width: 10000px;
+      height: 10000px;
+    }
+  }
+}
